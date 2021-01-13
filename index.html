@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8"/>
+  <title>Калькулятор</title>
+</head>
+<body>
+<div class="calc__wrap">
+  <h3 class="calc__title">Узнайте стоимость натяжных потолков с монтажом уже сейчас</h3>
+  <p class="calc__text">Мы не скрываем стоимость м<sup>2</sup>, поскольку предлагаем вам доступные цены и
+    прозрачную стоимость</p>
+  <div class="calc__logic">
+    <div class="calc-logic__wrap">
+      <div class="calc-logic__box-range">
+        <span class="box-range__title">Общая площадь:</span>
+        <div class="calc-logic__box-input-range">
+          <input type="range" min="0" max="100" step="1" value="1" class="calc__range" id="range-top"
+                 oninput="rangeRun()" title=""/>
+          <div class="line-range">
+            <div class="line-range__bg" id="line-range__top"></div>
+          </div>
+        </div>
+        <div class="calc__result-volume">
+          <input type="number" class="calc-result" onchange="manualInput()" id="calc-input__top" value="1" title=""/>
+          <span class="result-volume__span">м <sup>2</sup></span>
+        </div>
+      </div>
+      <div class="calc-logic__box-range">
+        <span class="box-range__title">Количество светильников:</span>
+        <div class="calc-logic__box-input-range">
+          <input type="range" min="0" max="30" step="1" value="0" class="calc__range" id="range-bottom"
+                 oninput="rangeRun()" title=""/>
+          <div class="line-range">
+            <div class="line-range__bg" id="line-range__bottom"></div>
+          </div>
+        </div>
+        <div class="calc__result-volume">
+          <input type="number" onchange="manualInput()" value="0" class="calc-result" id="calc-input__bottom" title=""/>
+        </div>
+      </div>
+      <div class="calc-logic__invoice">
+        <span class="calc-logic__invoice-title">Фактура:</span>
+        <div class="calc-logic__select-wrap">
+          <select class="calc__select" id="calc-select" oninput="rangeRun()" title="">
+            <option value="700">Матовая</option>
+            <option value="800">Глянцевая</option>
+            <option value="700">Сатиновые</option>
+            <option value="1500">Тканевые</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="calc-result__wrap">
+      <span class="calc-result__title">Итого:</span>
+      <span class="calc-result__sum" id="result-sum">0</span>
+      <span class="calc-result__text">Материал + установка</span>
+      <a href="#" class="calc-result__link">Вызвать замерщика</a>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
